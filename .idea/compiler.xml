@@ -9,6 +9,8 @@
         <module name="ProductInventoryLab" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8" />
+    <bytecodeTargetLevel>
+      <module name="ProductInventoryLab" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
