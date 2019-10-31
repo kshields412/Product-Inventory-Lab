@@ -9,5 +9,12 @@ public class Sneaker {
     private int qty;
     private float price;
 
+    public String getName() {
+
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
 
 }

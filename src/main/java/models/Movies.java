@@ -6,4 +6,5 @@ public class Movies {
     private float ticketPrice;
     private String title;
     private float openingWeekSales;
+
 }
