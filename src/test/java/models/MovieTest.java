@@ -10,8 +10,10 @@ public class MovieTest {
         String expectedTitle = "Cats";
         String expectedGenre = "Musical";
         Movie movie = new Movie(expectedTitle, expectedGenre);
+
         String actualTitle = movie.getTitle();
         String actualGenre = movie.getGenre();
+
         Assert.assertEquals(expectedTitle, actualTitle);
         Assert.assertEquals(expectedGenre, actualGenre);
     }
@@ -42,7 +44,9 @@ public class MovieTest {
     public void testGetRunTime(){
         Integer expected = 90;
         Movie movie = new Movie("Babe", "Kids", 90, 6.00, 90000.00);
+
         Integer actual = movie.getRunTime();
+
         Assert.assertEquals(expected, actual);
     }
 
@@ -50,7 +54,9 @@ public class MovieTest {
     public void testSetRunTime(){
         Integer expected = 90;
         Movie movie = new Movie(null, null, null, null, null);
+
         movie.setRunTime(90);
+
         Assert.assertEquals(expected, movie.getRunTime());
     }
 
@@ -58,7 +64,9 @@ public class MovieTest {
     public void testGetGenre(){
         String expected = "Drama";
         Movie movie = new Movie(null, "Drama", null, null, null);
+
         String actual = movie.getGenre();
+
         Assert.assertEquals(expected, actual);
     }
 
@@ -66,7 +74,9 @@ public class MovieTest {
     public void testSetGenre(){
         String expected = "Fantasy";
         Movie movie = new Movie(null, null, null, null, null);
+
         movie.setGenre("Fantasy");
+
         Assert.assertEquals(expected, movie.getGenre());
     }
 
@@ -74,7 +84,9 @@ public class MovieTest {
     public void testGetTicketPrice(){
         Double expected = 8.00;
         Movie movie = new Movie(null, null, null, 8.00, null);
+
         Double actual = movie.getTicketPrice();
+
         Assert.assertEquals(expected, actual);
     }
 
@@ -82,7 +94,9 @@ public class MovieTest {
     public void testSetTicketPrice(){
         Double expected = 7.00;
         Movie movie = new Movie(null,null,null,null,null);
+
         movie.setTicketPrice(7.00);
+
         Assert.assertEquals(expected, movie.getTicketPrice());
     }
 
@@ -90,7 +104,9 @@ public class MovieTest {
     public void testGetOpeningWeekSales(){
         Double expected = 10000.00;
         Movie movie = new Movie(null,null,null,null, 10000.00);
+
         Double actual = movie.getOpeningWeekSales();
+
         Assert.assertEquals(expected, actual);
     }
 
@@ -98,7 +114,9 @@ public class MovieTest {
     public void testSetOpeningWeekSales(){
         Double expected = 100000.00;
         Movie movie = new Movie(null,null,null,null,null);
+
         movie.setOpeningWeekSales(100000.00);
+
         Assert.assertEquals(expected, movie.getOpeningWeekSales());
     }
 
@@ -106,15 +124,19 @@ public class MovieTest {
     public void testGetTitle(){
         String expected = "Scream";
         Movie movie = new Movie("Scream", null,null,null,null);
+
         String actual = movie.getTitle();
-        Assert.assertEquals(expected, movie.getTitle());
+
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testSetTitle(){
         String expected = "Scream";
         Movie movie = new Movie(null,null,null,null,null);
+
         movie.setTitle("Scream");
+
         Assert.assertEquals(expected, movie.getTitle());
     }
 }
