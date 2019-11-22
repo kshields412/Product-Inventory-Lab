@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class MovieTest {
+public class MovieServiceTest {
     MovieService ms;
     ArrayList<Movie> inventory;
 
@@ -109,5 +109,15 @@ public class MovieTest {
         ms.create("Jaws", "Thriller", 110, 5.00, 200000000.00);
         ms.create("Gremlins", "Family", 95, 4.00, 430000.00);
         Assert.assertTrue(ms.size().equals(4));
+    }
+
+    @Test
+    public void testUpdate(){
+        Movie movie = ms.create("Nightmare Before Christmas", "Family", 110, 8.75, 1000000.00);
+        ms.update(3, movie);
+        String expected = "Seasonal";
+        movie.setGenre(expected);
+
+        Assert.assertEquals(expected, movie.getGenre());
     }
 }

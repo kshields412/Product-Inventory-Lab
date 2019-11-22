@@ -104,4 +104,15 @@ public class SneakerServiceTest {
         ss.create("Chanel Boots", "Chanel", 7, 70.00, 43);
         Assert.assertTrue(ss.size().equals(4));
     }
+//
+//    @Test
+//    public void testUpdate(){
+//        Sneaker sneaker = ss.create("All-Star", "Converse", 8, 65.00, 1000);
+//        ss.update(3, sneaker);
+//        Integer expected = 999;
+//        sneaker.setQty(expected);
+//
+//        Assert.assertEquals(expected, sneaker.getQty());
+//    }
+
 }
