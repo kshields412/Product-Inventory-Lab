@@ -65,7 +65,7 @@ public class SneakerServiceTest {
         inventory.add(sneaker1);
         inventory.add(sneaker2);
 
-        Assert.assertEquals(sneaker1, ss.findSneaker(2)); //second index
+        Assert.assertEquals(sneaker1, ss.findSneaker(3)); //second index
     }
 
     @Test
@@ -93,4 +93,15 @@ public class SneakerServiceTest {
         Assert.assertTrue(inventory.size() == 2);
     }
 
+    @Test
+    public void testSize1(){
+        Assert.assertTrue(ss.size().equals(2));
+    }
+
+    @Test
+    public void testSize2(){
+        ss.create("Hurrachi", "Nike", 9, 150.00, 20);
+        ss.create("Chanel Boots", "Chanel", 7, 70.00, 43);
+        Assert.assertTrue(ss.size().equals(4));
+    }
 }

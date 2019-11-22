@@ -64,7 +64,7 @@ public class MovieTest {
         inventory.add(movie1);
         inventory.add(movie2);
 
-        Assert.assertEquals(movie1, ms.findMovie(2));//second index
+        Assert.assertEquals(movie1, ms.findMovie(3));//second index
     }
 
     @Test
@@ -97,5 +97,17 @@ public class MovieTest {
     public void testDelete(){
         ms.delete(1);
         Assert.assertTrue(inventory.size() == 2);
+    }
+
+    @Test
+    public void testSize1(){
+        Assert.assertTrue(ms.size().equals(2));
+    }
+
+    @Test
+    public void testSize2(){
+        ms.create("Jaws", "Thriller", 110, 5.00, 200000000.00);
+        ms.create("Gremlins", "Family", 95, 4.00, 430000.00);
+        Assert.assertTrue(ms.size().equals(4));
     }
 }

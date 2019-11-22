@@ -1,5 +1,6 @@
 package services;
 
+import models.Movie;
 import models.Sneaker;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class SneakerService {
     }
 
     public Sneaker findSneaker(Integer id) {
-        return this.inventory.get(id);
+        return this.inventory.get(id - 1);
     }
 
     public ArrayList<Sneaker> findAll() {
@@ -30,4 +31,12 @@ public class SneakerService {
         }
         return false;
     }
+
+    public Integer size(){
+        return inventory.size();
+    }
+
+//    public void update(Integer id, Movie updatedSneaker) {
+//        inventory.set(id - 1, updatedSneaker);
+//    }
 }

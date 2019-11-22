@@ -15,7 +15,7 @@ public class MovieService {
     }
 
     public Movie findMovie(Integer id) {
-        return this.inventory.get(id);
+        return this.inventory.get(id - 1);
     }
 
     public ArrayList<Movie> findAll() {
@@ -29,5 +29,13 @@ public class MovieService {
             }
         }
         return false;
+    }
+
+    public Integer size(){
+        return inventory.size();
+    }
+
+    public void update(Integer id, Movie updatedMovie) {
+        inventory.set(id - 1, updatedMovie);
     }
 }

@@ -65,4 +65,9 @@ public class Movie {
         return title;
     }
 
+    public String toString() {
+        return String.format("Id: %s | Title: %s | Genre: %s | Run Time: %s | Ticket Price: %s | Opening Weekend Sales: %s",
+                getId(), getTitle(), getGenre(), getRunTime(), getTicketPrice(), getOpeningWeekSales());
+    }
+
 }

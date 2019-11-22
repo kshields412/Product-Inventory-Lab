@@ -63,4 +63,9 @@ public class Sneaker {
     public void setPrice(Double price) {
         this.price = price;
     }
+
+    public String toString() {
+        return String.format("Id: %s | Name: %s | Brand: %s | Size: %s | Price: %s | Quantity: %s",
+                getId(), getName(), getBrand(), getSize(), getPrice(), getQty());
+    }
 }
