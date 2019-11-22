@@ -1,18 +1,35 @@
 package models;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestTemplate;
 
 public class MovieTest {
+    Movie baseMovie;
+    Movie movie;
+    Integer id;
+    String title;
+    Integer runTime;
+    String genre;
+    Double ticketPrice;
+    Double openingWeekSales;
+
+    @Before
+    public void setUp(){
+        baseMovie = new Movie(id, title, genre);
+        movie = new Movie(id, title, genre, runTime, ticketPrice, openingWeekSales);
+    }
+
     @Test
     public void testConstructor1(){
+        Integer expectedId = 1;
         String expectedTitle = "Cats";
         String expectedGenre = "Musical";
-        Movie movie = new Movie(expectedTitle, expectedGenre);
+        baseMovie = new Movie(expectedId, expectedTitle, expectedGenre);
 
-        String actualTitle = movie.getTitle();
-        String actualGenre = movie.getGenre();
+        String actualTitle = baseMovie.getTitle();
+        String actualGenre = baseMovie.getGenre();
 
         Assert.assertEquals(expectedTitle, actualTitle);
         Assert.assertEquals(expectedGenre, actualGenre);
@@ -20,30 +37,33 @@ public class MovieTest {
 
     @Test
     public void testConstructor2(){
+        Integer expectedId = 1;
         String expectedTitle = "Cats";
         String expectedGenre = "Musical";
         Integer expectedRunTime = 105;
         Double expectedTicketPrice = 9.00;
         Double expectedOpeningWeekSales = 1000000.00;
-        Movie movie = new Movie(expectedTitle, expectedGenre, expectedRunTime, expectedTicketPrice, expectedOpeningWeekSales);
+        movie = new Movie(expectedId, expectedTitle, expectedGenre, expectedRunTime, expectedTicketPrice, expectedOpeningWeekSales);
 
-        String actualTitle = movie.getTitle();
-        String actualGenre = movie.getGenre();
-        Integer actualRunTime = movie.getRunTime();
-        Double actualTicketPrice = movie.getTicketPrice();
-        Double actualOpeningWeekSales = movie.getOpeningWeekSales();
+        Assert.assertEquals(Integer.class.getName(), movie.getId().getClass().getName());
+        Assert.assertEquals(expectedTitle, movie.getTitle());
+        Assert.assertEquals(expectedGenre, movie.getGenre());
+        Assert.assertEquals(expectedRunTime, movie.getRunTime());
+        Assert.assertEquals(expectedTicketPrice, movie.getTicketPrice());
+        Assert.assertEquals(expectedOpeningWeekSales, movie.getOpeningWeekSales());
+    }
 
-        Assert.assertEquals(expectedTitle, actualTitle);
-        Assert.assertEquals(expectedGenre, actualGenre);
-        Assert.assertEquals(expectedRunTime, actualRunTime);
-        Assert.assertEquals(expectedTicketPrice, actualTicketPrice);
-        Assert.assertEquals(expectedOpeningWeekSales, actualOpeningWeekSales);
+    @Test
+    public void testGetId(){
+        Integer expected = 2;
+        baseMovie = new Movie(expected, null, null);
+        Assert.assertEquals(expected, baseMovie.getId());
     }
 
     @Test
     public void testGetRunTime(){
         Integer expected = 90;
-        Movie movie = new Movie("Babe", "Kids", 90, 6.00, 90000.00);
+        movie = new Movie(2, "Babe", "Kids", 90, 6.00, 90000.00);
 
         Integer actual = movie.getRunTime();
 
@@ -53,7 +73,7 @@ public class MovieTest {
     @Test
     public void testSetRunTime(){
         Integer expected = 90;
-        Movie movie = new Movie(null, null, null, null, null);
+        movie = new Movie(null, null, null, null, null, null);
 
         movie.setRunTime(90);
 
@@ -63,7 +83,7 @@ public class MovieTest {
     @Test
     public void testGetGenre(){
         String expected = "Drama";
-        Movie movie = new Movie(null, "Drama", null, null, null);
+        movie = new Movie(null, null, "Drama", null, null, null);
 
         String actual = movie.getGenre();
 
@@ -73,7 +93,7 @@ public class MovieTest {
     @Test
     public void testSetGenre(){
         String expected = "Fantasy";
-        Movie movie = new Movie(null, null, null, null, null);
+        movie = new Movie(null, null, null, null, null, null);
 
         movie.setGenre("Fantasy");
 
@@ -83,7 +103,7 @@ public class MovieTest {
     @Test
     public void testGetTicketPrice(){
         Double expected = 8.00;
-        Movie movie = new Movie(null, null, null, 8.00, null);
+        movie = new Movie(null, null, null, null, 8.00, null);
 
         Double actual = movie.getTicketPrice();
 
@@ -93,7 +113,7 @@ public class MovieTest {
     @Test
     public void testSetTicketPrice(){
         Double expected = 7.00;
-        Movie movie = new Movie(null,null,null,null,null);
+        movie = new Movie(null, null,null,null,null,null);
 
         movie.setTicketPrice(7.00);
 
@@ -103,7 +123,7 @@ public class MovieTest {
     @Test
     public void testGetOpeningWeekSales(){
         Double expected = 10000.00;
-        Movie movie = new Movie(null,null,null,null, 10000.00);
+        movie = new Movie(null, null,null,null,null, 10000.00);
 
         Double actual = movie.getOpeningWeekSales();
 
@@ -113,7 +133,7 @@ public class MovieTest {
     @Test
     public void testSetOpeningWeekSales(){
         Double expected = 100000.00;
-        Movie movie = new Movie(null,null,null,null,null);
+        movie = new Movie(null, null,null,null,null,null);
 
         movie.setOpeningWeekSales(100000.00);
 
@@ -123,7 +143,7 @@ public class MovieTest {
     @Test
     public void testGetTitle(){
         String expected = "Scream";
-        Movie movie = new Movie("Scream", null,null,null,null);
+        movie = new Movie(null, "Scream", null,null,null,null);
 
         String actual = movie.getTitle();
 
@@ -133,7 +153,7 @@ public class MovieTest {
     @Test
     public void testSetTitle(){
         String expected = "Scream";
-        Movie movie = new Movie(null,null,null,null,null);
+        movie = new Movie(null, null,null,null,null,null);
 
         movie.setTitle("Scream");
 

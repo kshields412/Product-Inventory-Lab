@@ -1,14 +1,28 @@
 package models;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class SneakerTest {
+    Sneaker sneaker;
+    Integer id;
+    String name;
+    String brand;
+    Integer size;
+    Double price;
+    Integer qty;
+
+    @Before
+    public void setUp() {
+        sneaker = new Sneaker(id, name, brand, size, price, qty);
+    }
+
     @Test
     public void testSetId() {
         Integer expected = 1;
-        Sneaker sneaker = new Sneaker(null, null, null, null, null, null);
+        sneaker = new Sneaker(null, null, null, null, null, null);
 
         sneaker.setId(expected);
 
@@ -18,7 +32,7 @@ public class SneakerTest {
     @Test
     public void testGetId() {
         Integer expected = 1;
-        Sneaker sneaker = new Sneaker(expected, null, null, null, null, null);
+        sneaker = new Sneaker(expected, null, null, null, null, null);
 
         Integer actual = sneaker.getId();
 
@@ -28,7 +42,7 @@ public class SneakerTest {
     @Test
     public void testSetName() {
         String expected = "Air Force 1";
-        Sneaker sneaker = new Sneaker(null, null, null, null, null, null);
+        sneaker = new Sneaker(null, null, null, null, null, null);
 
         sneaker.setName(expected);
 
@@ -38,7 +52,7 @@ public class SneakerTest {
     @Test
     public void testGetName() {
         String expected = "Air Force 1";
-        Sneaker sneaker = new Sneaker(null, expected, null, null, null, null);
+        sneaker = new Sneaker(null, expected, null, null, null, null);
 
         String actual = sneaker.getName();
 
@@ -48,7 +62,7 @@ public class SneakerTest {
     @Test
     public void testSetBrand() {
         String expected = "Nike";
-        Sneaker sneaker = new Sneaker(null, null, null, null, null, null);
+        sneaker = new Sneaker(null, null, null, null, null, null);
 
         sneaker.setBrand(expected);
 
@@ -58,7 +72,7 @@ public class SneakerTest {
     @Test
     public void testGetBrand() {
         String expected = "Nike";
-        Sneaker sneaker = new Sneaker(null, null, expected, null, null, null);
+        sneaker = new Sneaker(null, null, expected, null, null, null);
 
         String actual = sneaker.getBrand();
 
@@ -68,7 +82,7 @@ public class SneakerTest {
     @Test
     public void testSetSize() {
         Integer expected = 8;
-        Sneaker sneaker = new Sneaker(null, null, null, null, null, null);
+        sneaker = new Sneaker(null, null, null, null, null, null);
 
         sneaker.setSize(expected);
 
@@ -78,7 +92,7 @@ public class SneakerTest {
     @Test
     public void testGetSize() {
         Integer expected = 8;
-        Sneaker sneaker = new Sneaker(null, null, null, 8, null, null);
+        sneaker = new Sneaker(null, null, null, 8, null, null);
 
         Integer actual = sneaker.getSize();
 
@@ -88,7 +102,7 @@ public class SneakerTest {
     @Test
     public void testSetQty() {
         Integer expected = 1000;
-        Sneaker sneaker = new Sneaker(null, null, null, null, null, null);
+        sneaker = new Sneaker(null, null, null, null, null, null);
 
         sneaker.setQty(1000);
 
@@ -98,7 +112,7 @@ public class SneakerTest {
     @Test
     public void testGetQty() {
         Integer expected = 1000;
-        Sneaker sneaker = new Sneaker(null, null, null, null, null, expected);
+        sneaker = new Sneaker(null, null, null, null, null, expected);
 
         Integer actual = sneaker.getQty();
 
@@ -108,7 +122,7 @@ public class SneakerTest {
     @Test
     public void testSetPrice() {
         Double expected = 200.00;
-        Sneaker sneaker = new Sneaker(null, null, null,null, null, null);
+        sneaker = new Sneaker(null, null, null,null, null, null);
 
         sneaker.setPrice(expected);
 
@@ -118,7 +132,7 @@ public class SneakerTest {
     @Test
     public void testGetPrice() {
         Double expected = 200.00;
-        Sneaker sneaker = new Sneaker(null, null, null, null, expected, null);
+        sneaker = new Sneaker(null, null, null, null, expected, null);
 
         Double actual = sneaker.getPrice();
 

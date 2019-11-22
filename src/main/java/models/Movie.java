@@ -1,6 +1,8 @@
 package models;
 
 public class Movie {
+    public Integer setId;
+    private Integer id;
     private String title;
     private Integer runTime;
     private String genre;
@@ -8,18 +10,24 @@ public class Movie {
     private Double openingWeekSales;
 
 
-    public Movie(String title, String genre){
+    public Movie(Integer id, String title, String genre){
+        this.id = id;
         this.title = title;
         this.genre = genre;
     }
 
-    public Movie(String title, String genre, Integer runTime, Double ticketPrice, Double openingWeekSales){
+    public Movie(Integer id, String title, String genre, Integer runTime, Double ticketPrice, Double openingWeekSales){
+        this.id = id;
         this.title = title;
         this.genre = genre;
         this.runTime = runTime;
         this.ticketPrice = ticketPrice;
         this.openingWeekSales = openingWeekSales;
     }
+
+    public Integer getId() { return id; }
+
+    public void setId(Integer id) { this.id = id; }
 
     public Integer getRunTime() {
         return runTime;
