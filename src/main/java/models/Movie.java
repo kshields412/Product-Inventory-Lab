@@ -4,8 +4,8 @@ public class Movie {
     public Integer setId;
     private Integer id;
     private String title;
-    private Integer runTime;
     private String genre;
+    private Integer runTime;
     private Double ticketPrice;
     private Double openingWeekSales;
 

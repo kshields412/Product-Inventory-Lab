@@ -2,7 +2,8 @@ package utils;
 
 import java.util.Scanner;
 
-public class Console {
+public class
+Console {
     public static void print(String val, Object... args){
         System.out.println(String.format(val, args));
     }
