@@ -7,7 +7,7 @@ public class MovieMainUtils {
     public static void selectMovie(MovieService movieService) {
         Integer selection = Console.getIntegerInput("Make a selection!\n\n" +
                 "1 - Create A Movie!\n" + "2 - Read About Our Movies!\n" +
-                "3 - Update A Movie!\n" + "4 - Delete A Movie!\n" + "5 - Get Report!");
+                "3 - Update A Movie!\n" + "4 - Delete A Movie!\n" + "5 - Exit!");
         getUserMovieSelection(selection, movieService);
     }
 
@@ -26,6 +26,8 @@ public class MovieMainUtils {
             case 4:
                 deleteMovie(movieService);
                 break;
+            case 5:
+                System.exit(0);
             default:
                 selectMovie(movieService);
         }

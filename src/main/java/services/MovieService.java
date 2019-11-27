@@ -48,6 +48,18 @@ public class MovieService {
         inventory.set(id - 1, updatedMovie);
     }
 
+    public String toString(){
+        String result = "";
+        for(int i = inventory.size() -1; i >= 0; i--){
+            if (i != 0){
+                result += inventory.get(i).toString() + '\n';
+            }else{
+                result += inventory.get(i).toString();
+            }
+        }
+        return result;
+    }
+
     public void csvWriting() {
         try {
             String csvFile = "/Users/kai/Dev/Labs/Product-Inventory-Lab/Movie.csv";

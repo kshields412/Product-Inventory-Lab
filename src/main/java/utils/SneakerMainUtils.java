@@ -7,7 +7,7 @@ public class SneakerMainUtils {
         public static void selectSneaker(SneakerService sneakerService) {
             Integer selection = Console.getIntegerInput("Make a selection!\n\n" +
                     "1 - Create A Sneaker!\n" + "2 - Read About Our Sneakers!\n" +
-                    "3 - Update A Sneaker!\n" + "4 - Delete A Sneaker!\n" + "5 - Get Report!");
+                    "3 - Update A Sneaker!\n" + "4 - Delete A Sneaker!\n" + "5 - Exit!");
             getUserSneakerSelection(selection, sneakerService);
         }
 
@@ -26,6 +26,8 @@ public class SneakerMainUtils {
                 case 4:
                     deleteSneaker(sneakerService);
                     break;
+                case 5:
+                    System.exit(0);
                 default:
                     selectSneaker(sneakerService);
             }
