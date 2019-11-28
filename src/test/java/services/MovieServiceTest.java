@@ -120,4 +120,17 @@ public class MovieServiceTest {
 
         Assert.assertEquals(expected, movie.getGenre());
     }
+
+    @Test
+    public void testToString(){
+        Movie movie = ms.create("Ponyo", "Family", 120, 7.50, 1230000.00);
+        String actual = movie.toString();
+        Assert.assertEquals("Id: 3 | Title: Ponyo | Genre: Family | Run Time: 120 | Ticket Price: 7.5 | Opening Weekend Sales: 1230000.0", actual);
+    }
+
+//    @Test
+//    public void testCSVWriting(){
+//        ms.csvWriting();
+//        Assert.assertEquals("bob", ms.csvWriting());
+//    }
 }
